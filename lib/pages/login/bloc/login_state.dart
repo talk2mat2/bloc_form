@@ -1,15 +1,18 @@
 class LoginState {
   String? username;
   String? password;
-  LoginState({this.password = "", this.username = ""});
-
-  LoginState copyWith({String? password, String? username}) {
+  bool? loginLoading;
+  LoginState(
+      {this.password = "", this.username = "", this.loginLoading = false});
+  LoginState copyWith(
+      {String? password, String? username, bool? loginLoading}) {
     return LoginState(
         password: password ?? this.password,
-        username: username ?? this.username);
+        username: username ?? this.username,
+        loginLoading: loginLoading ?? this.loginLoading);
   }
 }
 
 class InitState extends LoginState {
-  InitState() : super(password: "", username: "");
+  InitState() : super(password: "", username: "", loginLoading: false);
 }

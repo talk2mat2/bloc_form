@@ -10,5 +10,9 @@ class LoGinBlock extends Bloc<AppEvents, LoginState> {
     on<HandleChangePassword>((event, emit) {
       emit(state.copyWith(password: event.password));
     });
+
+    on<LoginLoading>((event, emit) {
+      emit(state.copyWith(loginLoading: event.loading));
+    });
   }
 }
