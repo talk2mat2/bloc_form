@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: MediaQuery.of(context).size.width / 2,
+                    height: MediaQuery.of(context).size.width / 3,
                   ),
                   Text(
                     "Login",

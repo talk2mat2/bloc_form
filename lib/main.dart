@@ -1,5 +1,6 @@
 import 'package:app2/API/repositories/repository.dart';
 import 'package:app2/appblock/app_block.dart';
+import 'package:app2/pages/dashboard/dashboard.dart';
 import 'package:app2/pages/login/bloc/login_bloc.dart';
 import 'package:app2/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // dynamic state = BlocProvider.of(context).state;
     return MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
           child: RepositoryProvider(
               create: (context) => AppRepository(),
               child: const Scaffold(
-                body: LoginPage(),
+                body: SafeArea(child: Dashboard()),
               )),
         ));
   }
